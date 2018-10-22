@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  arrival: 2018-10-23 01:19:00
+  my_adult_count: 1
+  my_child_count: 1
+  int_adult_count: 1
+  int_child_count: 1
+  total: 1
+  user: one
+  activity: one
+
+two:
+  arrival: 2018-10-23 01:19:00
+  my_adult_count: 1
+  my_child_count: 1
+  int_adult_count: 1
+  int_child_count: 1
+  total: 1
+  user: two
+  activity: two

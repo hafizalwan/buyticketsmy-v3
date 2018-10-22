@@ -1,0 +1,63 @@
+<footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">
+              We at <%= link_to 'BuyTickets', 'https://buytickets.my' %> keep our customers experience at the top of our priority!
+              Offering only the best things that we ourselves believe better than any other place you'd pay for your vacation.
+              Leave all the hassle to look for affordable price to us, we are really good at it.
+          </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Featured</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Mangrove Tour</a></li>
+            <li><a class="white-text" href="#!">Island Hopping</a></li>
+            <li><a class="white-text" href="#!">Car Rental</a></li>
+            <li><a class="white-text" href="#!">Honeymoon Packages</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><%= link_to 'Login', new_user_session_path %></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'BuyTickets.my', 'https://www.facebook.com/buyticketsmy' %></li>
+            <li><%= link_to 'Instagram', 'https://www.instagram.com' %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container">
+      &copy; 2017 - 2018 <%= link_to 'BuyTickets.my', 'https://www.facebook.com/buyticketsmy' %>
+      </div>
+    </div>
+  </footer>
+
+    <script>
+        $(document).ready(function () {
+
+            //Initiate Slider
+            /* global $ */
+            $('.slider').slider({
+               indicators: false,
+               height: 500,
+               transition: 500,
+               interval: 6000
+            });
+
+            //Initiate Dropdown
+            $(".dropdown-trigger").dropdown();
+
+            //Initiate Sidenav
+            $('.sidenav').sidenav({
+              edge: 'right'
+            });
+
+
+        });
+    </script>

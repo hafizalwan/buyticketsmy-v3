@@ -1,2 +1,116 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@charset "UTF-8";
+
+// Color
+@import "materialize/components/color-variables";
+@import "materialize/components/color-classes";
+
+// Variables;
+@import "materialize/components/variables";
+
+// Reset
+@import "materialize/components/normalize";
+
+// materialize/components
+@import "materialize/components/global";
+@import "materialize/components/badges";
+@import "materialize/components/icons-material-design";
+@import "materialize/components/grid";
+@import "materialize/components/navbar";
+@import "materialize/components/typography";
+@import "materialize/components/transitions";
+@import "materialize/components/cards";
+@import "materialize/components/toast";
+@import "materialize/components/tabs";
+@import "materialize/components/tooltip";
+@import "materialize/components/buttons";
+@import "materialize/components/dropdown";
+@import "materialize/components/waves";
+@import "materialize/components/modal";
+@import "materialize/components/collapsible";
+@import "materialize/components/chips";
+@import "materialize/components/materialbox";
+@import "materialize/components/forms/forms";
+@import "materialize/components/table_of_contents";
+@import "materialize/components/sidenav";
+@import "materialize/components/preloader";
+@import "materialize/components/slider";
+@import "materialize/components/carousel";
+@import "materialize/components/tapTarget";
+@import "materialize/components/pulse";
+@import "materialize/components/datepicker";
+@import "materialize/components/timepicker";
+
+// Icons
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+// Materialize
+@import 'materialize';
+// Font Awesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Magra|Yellowtail');
+
+// Toastr
+@import "toastr";
+
+// Custom Styling
+body {
+    background-color: #eee;
+}
+
+nav {
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+.mobile-nav {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    margin-top: 15px;
+    background-color: #eee;
+}
+
+.nav-wrapper {
+  ul li {
+    margin-right: 5px;
+    a {
+      color: #000;
+    }
+  }
+}
+
+.avatar_small {
+  width: 28px;
+}
+
+.avatar_medium {
+  width: 48px;
+}
+
+.avatar_large {
+  width: 68px;
+}
+
+.avatar_full {
+  width: 100%;
+}
+
+.img-logo {
+    margin-top: 10px;
+}
+
+.deal-intro {
+  text-align: center;
+  .best-price-title {
+    font-family: 'Yellowtail', cursive;
+  }
+  .best-price-p {
+    font-style: italic;
+  }
+}
+
+.langkawi-tag {
+	color: #b71c1c;
+}
+
+.activity-title {
+    font-family: 'Magra', sans-serif;
+}
