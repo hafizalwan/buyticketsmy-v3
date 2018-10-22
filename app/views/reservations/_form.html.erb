@@ -1,0 +1,67 @@
+<!-- RESERVATION -->
+<div class="col s12 l5">
+  <div class="card">
+    <div class="card-content">
+      <div class="card-title">MYR<%= @activity.my_adult_price %></div>
+      <p><del>MYR<%= @activity.full_price %></del>
+      <!-- <span class="new badge red" data-badge-caption="%">0</span></p> -->
+      <br/>
+      <%= form_for([@activity, @activity.reservations.new]) do |f| %>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">date_range</i>
+            <%= f.text_field :arrival, placeholder: "Select your date", type: "text" %>
+          </div><!-- col -->
+        </div><!-- row -->
+        <div class="collection">
+          <div class="row collection-item">
+            <div class="col s12 input-field">
+              <%= f.text_field :my_adult_count, id: "adult-count", type: "number" %>
+              <label for="adult-count">Adult - MYR <%= @activity.my_adult_price %> per person</label>
+            </div><!-- col input-field -->
+          </div><!-- row -->
+          <div class="row collection-item">
+            <div class="col s12 input-field">
+              <%= f.text_field :my_child_count, id: "children-count", type: "number" %>
+              <label for="children-count">Children - MYR <%= @activity.my_child_price %> per person</label>
+            </div><!-- col input-field -->
+          </div><!-- row -->
+        </div><!-- collection -->
+
+        <div class="row">
+          <div class="col s6">
+            <%= button_tag type: "submit", id: "btn_book", class: "btn waves-effect waves-light btn-small red", disabled: true, name: "action" do %>BOOK NOW!
+            <% end %>
+          </div><!-- col -->
+        </div><!-- row -->
+        <div class="row">
+          <div class="col s12">
+            <i class="material-icons">error</i><span><p> Once the payment has been made, your booking are confirmed.
+            Please take note of the refund and cancellation policies of this booking.</p></span>
+          </div><!-- col -->
+        </div><!-- row -->
+
+        <% end %>
+    </div><!-- card-content -->
+  </div><!-- card -->
+</div><!-- col -->
+
+<script>
+
+  $(function() {
+
+    $('#reservation_arrival').datepicker({
+      dateFormat: 'dd-mm-yy',
+      minDate: 0,
+      maxDate: '2m',
+      onSelect: function(selected) {
+
+        $('#btn_book').attr('disabled', false);
+
+      }
+    });
+
+  });
+
+</script>

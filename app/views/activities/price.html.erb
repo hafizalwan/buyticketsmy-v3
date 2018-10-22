@@ -1,2 +1,88 @@
-<h1>Activities#price</h1>
-<p>Find me in app/views/activities/price.html.erb</p>
+<!-- Create Package Section -->
+<div class="row">
+  <div class="col s12">
+
+    <div class="card-panel">
+
+      <%= render 'create_activity_menu' %>
+
+      <div class="card-content">
+        <div class="container">
+          <div id="price">
+            <div class="row">
+              <h5 class="center">Pricing</h5>
+                <%= form_for @activity, class: "col s12" do |f| %>
+
+                  <div class="row">
+                    <h6>Full Price(Undiscounted)</h6>
+                    <div class="input-field col s12">
+                      <%= f.text_field :full_price, type: "number" %>
+                      <span class="helper-text">This price will be used for promotional discount, activity sale will use the price below</span>
+                    </div><!-- input-field -->
+                  </div><!-- row -->
+
+                  <div class="row">
+                    <h6>Malaysian Adult Price</h6>
+                    <div class="input-field col s12">
+                      <%= f.text_field :my_adult_price, type: "number" %>
+                      <span class="helper-text">Price for Malaysian adult</span>
+                    </div><!-- input-field -->
+                  </div><!-- row -->
+                  <br/>
+                  <br/>
+                  <div class="row">
+                    <h6>Malaysian Child Price</h6>
+                    <div class="input-field col s12">
+                      <%= f.text_field :my_child_price, type: "number" %>
+                      <span class="helper-text">Price for Malaysian child</span>
+                    </div><!-- input-field -->
+                  </div><!-- row -->
+                  <br/>
+                  <hr/>
+                  <br/>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <label for="int-price">
+                        <%= f.check_box :is_int_price, type: "checkbox" %> <span> Please check this box if this activity have different price for non Malaysian, otherwise please
+                      ignore and proceed to submit</span>
+                      </label>
+                    </div><!-- input-field -->
+                  </div><!-- row -->
+                  <br/>
+                  <br/>
+                  <h6>Non Malaysian Adult Price</h6>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <%= f.text_field :int_adult_price, type: "number" %>
+                      <span class="helper-text">Price for Non Malaysian adult</span>
+                    </div><!-- input-field -->
+                  </div><!-- row -->
+                  <br/>
+                  <br/>
+                  <div class="row">
+                    <h6>Non Malaysian Child Price</h6>
+                    <div class="input-field col s12">
+                      <%= f.text_field :int_child_price, type: "number" %>
+                      <span class="helper-text">Price for Non Malaysian child</span>
+                    </div><!-- input-field -->
+                  </div><!-- row -->
+                  <br/>
+                  <br/>
+
+                  <div class="row">
+                    <div class="col s12">
+                      <%= button_tag type: "submit", class: "btn waves-effect waves-light", name: "action" do %>
+                        Update<span><i class="material-icons right">update</i></span>
+                      <% end %>
+                    </div><!-- col -->
+                  </div><!-- row -->
+
+                <% end %>
+            </div><!-- row -->
+          </div><!-- price -->
+
+        </div><!-- container -->
+      </div><!-- card-content -->
+    </div><!-- card-panel -->
+  </div><!-- col -->
+</div><!-- row -->

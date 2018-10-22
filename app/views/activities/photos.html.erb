@@ -1,2 +1,44 @@
-<h1>Activities#photos</h1>
-<p>Find me in app/views/activities/photos.html.erb</p>
+<!-- Create Package Section -->
+<div class="row">
+  <div class="col s12">
+
+    <div class="card-panel">
+
+      <%= render 'create_activity_menu' %>
+
+      <div class="card-content">
+        <div class="container">
+        <!-- PHOTOS UPLOAD SECTION IS NOT YET COMPLETE -->
+          <div id="photos">
+            <%= form_for @activity do |f| %>
+              <h5 class="center">Upload photos for slider and banner</h5>
+              <br/>
+              <br/>
+              <br/>
+              <p>First photo will be used as banner image, upload multiple to make a photo slider.</p>
+              <div class="file-field input-field">
+                <div class="btn">
+                    <span>Upload</span>
+                    <input type="file" multiple>
+                </div><!-- btn -->
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more photos">
+                </div><!-- file-path-wrapper -->
+              </div><!-- file input-field -->
+
+              <div class="row">
+                <div class="col s12">
+                  <%= button_tag type: "submit", class: "btn waves-effect waves-light", name: "action" do %>
+                    Update<span><i class="material-icons right">update</i></span>
+                  <% end %>
+                </div><!-- col -->
+              </div><!-- row -->
+
+            <% end %>
+          </div><!-- photos -->
+
+        </div><!-- container -->
+      </div><!-- card-content -->
+    </div><!-- card-panel -->
+  </div><!-- col -->
+</div><!-- row -->

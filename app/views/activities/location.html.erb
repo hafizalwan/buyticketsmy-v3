@@ -1,2 +1,48 @@
-<h1>Activities#location</h1>
-<p>Find me in app/views/activities/location.html.erb</p>
+<!-- Create Package Section -->
+<div class="row">
+  <div class="col s12">
+    <div class="card-panel">
+
+      <%= render 'create_activity_menu' %>
+
+      <div class="card-content">
+        <div class="container">
+          <div id="location">
+            <div class="row">
+              <h5 class="center">Location Title and Google Map</h5>
+                <%= form_for @activity, class: "col s12" do |f| %>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <%= f.text_field :location_title, id: "location-title", type: "text" %>
+                      <label for="location-title">Location Title</label>
+                      <span class="helper-text">Location title will be displayed as a text.</span>
+                    </div><!-- input-field -->
+                  </div><!-- row -->
+                  <br/>
+                  <br/>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <%= f.text_field :location_map, id: "location-map", type: "text" %>
+                      <label for="location-map">Location on Google Map</label>
+                      <span class="helper-text">Type a location name in Google Map, will be displayed as a Google Map</span>
+                    </div><!-- input-field -->
+                  </div><!-- row -->
+
+                  <div class="row">
+                    <div class="col s12">
+                      <%= button_tag type: "submit", class: "btn waves-effect waves-light", name: "action" do %>
+                        Update<span><i class="material-icons right">update</i></span>
+                      <% end %>
+                    </div><!-- col -->
+                  </div><!-- row -->
+
+                <% end %>
+            </div><!-- row -->
+          </div><!-- location -->
+
+
+        </div><!-- container -->
+      </div><!-- card-content -->
+    </div><!-- card-panel -->
+  </div><!-- col -->
+</div><!-- row -->
