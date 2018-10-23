@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_104538) do
+ActiveRecord::Schema.define(version: 2018_10_23_114553) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 2018_10_23_104538) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment"
+    t.integer "star", default: 1
+    t.bigint "activity_id"
+    t.bigint "reservation_id"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_reviews_on_activity_id"
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -66,4 +78,6 @@ ActiveRecord::Schema.define(version: 2018_10_23_104538) do
   add_foreign_key "activities", "users"
   add_foreign_key "reservations", "activities"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "activities"
+  add_foreign_key "reviews", "reservations"
 end
