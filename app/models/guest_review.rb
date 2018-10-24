@@ -1,2 +1,0 @@
-class GuestReview < Review
-end
