@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col s12">
         <h5><%= icon('fas', 'list-ul', 'Pricing Details') %></h5>
-        <p><%= @activity.details %></p>
+        <p><%= @activity.price_details %></p>
       </div><!-- col -->
     </div><!-- row -->
 
@@ -91,7 +91,7 @@
 <div class="row">
   <div class="col s12">
     <h3>
-      <%= pluralize(@guest_reviews.count, "Review") %>
+      Reviews
       <span id="average_rating"></span>
     </h3>
     <div class="container">
