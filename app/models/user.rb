@@ -8,6 +8,5 @@ class User < ApplicationRecord
 
   has_many :activities
   has_many :reservations
-  has_many :guest_reviews, class_name: "GuestReview", foreign_key: "user_id"
 
 end
