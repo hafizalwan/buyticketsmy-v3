@@ -1,0 +1,30 @@
+<% if @guest_reviews.count == 0 %>
+  <div class="center">
+    <h4>There are no review yet</h4>
+  </div>
+<% else %>
+
+  <% @guest_reviews.order(id: :desc).each do |r| %>
+  </hr>
+  <div class="row">
+    <div class="col m3 center">
+      <!-- IMAGE TAG HERE(AVATAR_URL) -->
+      <strong><%= r.user.fullname %></strong>
+    </div><!-- col -->
+    <dic class="col m9">
+      <div><%= r.star %></div>
+
+      <% if current_user && current_user == r.guest %>
+        <span class="right">
+          <%= link_to r, method: :delete, data: {"Are you sure?"} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </span>
+      <% end %>
+    </div><!-- col -->
+    <div><%= r.created_at.strftime("%v") %></div>
+    <div><%= r.comment %></div>
+  </div><!-- row -->
+  <% else %>
+
+<% end %>
