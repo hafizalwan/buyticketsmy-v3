@@ -1,7 +1,7 @@
 class GuestReviewsController < ApplicationController
 
   def create
-
+    
     @reservation = Reservation.where(
                     id: guest_review_params[:reservation_id],
                     activity_id: guest_review_params[:activity_id],
