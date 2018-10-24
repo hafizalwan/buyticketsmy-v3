@@ -16,6 +16,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'billplz-api', '~> 0.2.1'
 gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 gem 'jquery-ui-rails', '~> 5.0'
+gem 'geocoder', '~> 1.5'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'

@@ -98,6 +98,7 @@ GEM
       multi_json
     font-awesome-sass (5.3.1)
       sassc (>= 1.11)
+    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.1.1)
@@ -244,6 +245,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.5)
   font-awesome-sass (~> 5.3.1)
+  geocoder (~> 1.5)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.3)
   jquery-ui-rails (~> 5.0)
