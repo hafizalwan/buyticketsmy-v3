@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @activities = Activity.where(active: true).limit(3)
+    @activities = Activity.where(active: true)
   end
 end
