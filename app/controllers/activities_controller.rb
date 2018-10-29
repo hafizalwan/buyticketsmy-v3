@@ -54,7 +54,7 @@ class ActivitiesController < ApplicationController
     end
 
     def activity_params
-      params.require(:activity).permit(:name, :description, :price_details, :how_to_directions, :how_to_seats, :activity_info, :refund_policies, :location_title, :location_map, :my_adult_price, :my_child_price, :int_adult_price, :int_child_price, :is_int_price, :sale_price, :full_price, :my_adult_count, :my_child_count, :int_adult_count, :int_child_count, photos: [])
+      params.require(:activity).permit(:name, :description, :price_details, :how_to_directions, :how_to_seats, :activity_info, :refund_policies, :location_title, :location_map, :my_adult_price, :my_child_price, :int_adult_price, :int_child_price, :is_int_price, :sale_price, :full_price, :my_adult_count, :my_child_count, :int_adult_count, :int_child_count, images: [])
     end
 
 end
