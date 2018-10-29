@@ -13,11 +13,11 @@
     <div class="col s12 m6">
         <div class="card sticky-action">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="img/mangrove-tour-card.jpg" alt="mangrove-tour">
+                <%= image_tag activity.images[0] %>
             </div><!-- card-image -->
             <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4"><%= @activity.name %><i class="material-icons right">more_vert</i></span>
-                <p>MYR<%= @activity.my_adult_price %>! <span class="grey-text text-lighten-1"><del>MYR<%= @activity.full_price %></del></span></p>
+                <span class="card-title activator grey-text text-darken-4"><%= activity.name %><i class="material-icons right">more_vert</i></span>
+                <p>MYR<%= activity.my_adult_price %>! <span class="grey-text text-lighten-1"><del>MYR<%= activity.full_price %></del></span></p>
             </div><!-- card-content -->
             <div class="card-action">
                 <%= button_tag type: "submit", class: "btn-small red pulse", name: "action" do %>
@@ -25,9 +25,9 @@
                 <% end %>
             </div><!-- card-action -->
             <div class="card-reveal">
-                <span class="card-title activator grey-text text-darken-4"><%= @activity.name %><i class="material-icons right">close</i></span>
+                <span class="card-title activator grey-text text-darken-4"><%= activity.name %><i class="material-icons right">close</i></span>
                 <p>
-                  <%= @activity.description %>
+                  <%= activity.description %>
                 </p>
             </div><!-- card-reveal -->
         </div><!-- card -->
