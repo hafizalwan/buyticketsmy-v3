@@ -20,9 +20,7 @@
                 <p>MYR<%= activity.my_adult_price %>! <span class="grey-text text-lighten-1"><del>MYR<%= activity.full_price %></del></span></p>
             </div><!-- card-content -->
             <div class="card-action">
-                <%= button_tag type: "submit", class: "btn-small red pulse", name: "action" do %>
-                  BOOK NOW!
-                <% end %>
+								<%= link_to 'BOOK NOW!', activity, class: "btn-small red" %>
             </div><!-- card-action -->
             <div class="card-reveal">
                 <span class="card-title activator grey-text text-darken-4"><%= activity.name %><i class="material-icons right">close</i></span>
