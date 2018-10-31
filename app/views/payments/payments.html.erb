@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-content">
+    <h5 class="center">Payment</h5><hr/>
+    <p>Name: <%= current_user.fullname %></p>
+    <p>Email: <%= current_user.email %></p>
+    <p>Activity: <%= current_user.reservation.activity.name %></p>
+    <p>Adult: <%= reservation.activity.my_adult_count %></p>
+    <p>Child: <%= reservation.activity.my_child_count %></p><br/><hr/>
+    <p>Total: <%= reservation.total %></p>
+    <%= link_to "Pay With Billplz", "https://www.billplz.com/bills/<%= bill %>", class: "btn-medium" %>
+  </div><!-- card-content -->
+</div><!-- card -->
