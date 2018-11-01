@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   get '/reservation_success' => 'reservations#success'
   get '/your_activities' => 'reservations#your_activities'
+  get '/your_reservations' => 'reservations#your_reservations'
 end
