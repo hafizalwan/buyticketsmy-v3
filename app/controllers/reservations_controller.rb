@@ -27,6 +27,10 @@ class ReservationsController < ApplicationController
     @bookings = current_user.reservations.order(arrival: :asc)
   end
 
+  def your_reservations
+    @activities = current_user.activities
+  end
+
   private
 
     def reservation_params
