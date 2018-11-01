@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create]
   end
 
+  get '/reservation_success' => 'reservations#success'
   get '/your_activities' => 'reservations#your_activities'
 end
