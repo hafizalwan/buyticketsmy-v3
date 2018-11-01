@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <ul class="collapsible popout">
+          <% @activities.each do |activity| %>
+            <% activity.reservations.each do |reservation| %>
+              <li>
+                <div class="collapsible-header">
+                  <%= reservation.arrival.strftime("%d/%m/%Y") %> | <%= reservation.activity.name %>
+                </div><!-- collapsible-header -->
+                <div class="collapsible-body">
+                  <p>Guest Name: <%= reservation.user.fullname %></p>
+                  <p>Guest Email: <%= reservation.user.email %></p>
+                  <p>Adult: <%= reservation.my_adult_count %></p>
+                  <p>Child: <%= reservation.my_child_count %></p><hr/><br/>
+                  <p>Total: MYR<%= reservation.total %></p>
+                </div><!-- collapsible-body -->
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div><!-- card-content -->
+    </div><!-- card -->
+  </div><!-- col -->
+</div><!-- row -->
+
+<script>
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>
