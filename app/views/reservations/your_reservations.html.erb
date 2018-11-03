@@ -12,7 +12,7 @@
                 <div class="collapsible-body">
                   <p>Guest Name: <%= reservation.user.fullname %></p>
                   <p>Guest Email: <%= reservation.user.email %></p>
-                  <p>Phone No: +6019-515 7067</p>
+                  <p>Phone No: <%= reservation.user.phone_number %></p>
                   <p>Arrival Date: <%= reservation.arrival.strftime("%d/%m/%Y") %></p>
                   <p>Adult: <%= reservation.my_adult_count %></p>
                   <p>Child: <%= reservation.my_child_count %></p><hr/><br/>
