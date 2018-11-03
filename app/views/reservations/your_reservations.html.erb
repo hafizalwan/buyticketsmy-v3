@@ -7,15 +7,29 @@
             <% activity.reservations.each do |reservation| %>
               <li>
                 <div class="collapsible-header">
-                  Guest Name: <%= reservation.user.fullname %> | <%= reservation.activity.name %> | Created at: <%= reservation.created_at.strftime("%d/%m/%Y") %> 
+                  Name: <%= reservation.user.fullname %> | Created at: <%= reservation.created_at.strftime("%d/%m/%Y") %> | Status: <% if reservation.Waiting? %>
+                                                                                                                                        <span class="new badge red" data-badge-caption=""><%= reservation.status %></span>
+                                                                                                                                      <% elsif reservation.Approved? %>
+                                                                                                                                        <span class="new badge green" data-badge-caption=""><%= reservation.status %></span>
+                                                                                                                                        <% else %>
+                                                                                                                                          <span class="new badge grey" data-badge-caption=""><%= reservation.status %></span>
+                                                                                                                                        <% end %>
                 </div><!-- collapsible-header -->
                 <div class="collapsible-body">
+                  <h5>Activity Name: <%= reservation.activity.name %> </h5>
                   <p>Guest Email: <%= reservation.user.email %></p>
                   <p>Phone No: <%= reservation.user.phone_number %></p>
                   <p>Arrival Date: <%= reservation.arrival.strftime("%d/%m/%Y") %></p>
                   <p>Adult: <%= reservation.my_adult_count %></p>
                   <p>Child: <%= reservation.my_child_count %></p><hr/><br/>
-                  <p>Total: MYR<%= reservation.total %></p>
+                  <p>Total: MYR <%= reservation.total %></p><br/>
+                  Payment Status: <br/>
+                  <div class="input-field inline">
+                    <% if reservation.Waiting? %>
+                      <%= link_to approve_reservation_path(reservation), method: :post do %> <i class="fa fa-thumbs-up fa-lg"></i> <% end %> |
+                      <%= link_to decline_reservation_path(reservation), method: :post do %> <i class="fa fa-thumbs-down fa-lg"></i> <% end %>
+                    <% end %>
+                  </div><!-- input-field inline -->
                 </div><!-- collapsible-body -->
               </li>
             <% end %>
