@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_reservation, [:approve, :decline]
+  before_action :set_reservation, only: [:approve, :decline]
 
   def create
     activity = Activity.find(params[:activity_id])
