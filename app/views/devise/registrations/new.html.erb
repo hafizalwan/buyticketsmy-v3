@@ -8,34 +8,30 @@
         <%= render 'shared/devisemes' %>
 
         <div class="input-field">
-          <%= f.label :email %><br />
+          <p>Email</p>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "email", type: "email", class: "validate" %>
-        </div><!-- input-field -->
+        </div><!-- input-field --><br/>
 
         <div class="input-field">
-          <%= f.label :fullname %><br />
+          <p>Full Name</p>
           <%= f.text_field :fullname, autofocus: true, autocomplete: "fullname", id: "fullname", type: "text" %>
-          <span class="helper-text">Full name max 15 characters</span>
-        </div><!-- input-field -->
+        </div><!-- input-field --><br/>
 
         <div class="input-field">
-          <%= f.label :phone_number %><br />
+          <p>Phone Number</p>
           <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone-number", id: "phone-number", type: "number" %>
           <span class="helper-text">Optional: Please enter your phone number.</span>
-        </div><!-- input-field -->
+        </div><!-- input-field --><br/>
 
         <div class="input-field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
+          <p>Password</p>
           <%= f.password_field :password, autocomplete: "new-password", id: "password", type: "password", class: "validate" %>
-        </div><!-- input-field -->
+        </div><!-- input-field --><br/>
 
         <div class="input-field">
-          <%= f.label :password_confirmation %><br />
+          <p>Confirm Password</p>
           <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "password", type: "password", class: "validate" %>
-        </div><!-- input-field -->
+        </div><!-- input-field --><br/>
 
         <div class="actions">
           <%= button_tag type: "submit", class: "btn waves-effect waves-light", name: "action" do %>
