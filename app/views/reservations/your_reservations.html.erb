@@ -7,10 +7,9 @@
             <% activity.reservations.each do |reservation| %>
               <li>
                 <div class="collapsible-header">
-                  <%= reservation.created_at.strftime("%d/%m/%Y") %> | <%= reservation.activity.name %>
+                  Guest Name: <%= reservation.user.fullname %> | <%= reservation.activity.name %> | Created at: <%= reservation.created_at.strftime("%d/%m/%Y") %> 
                 </div><!-- collapsible-header -->
                 <div class="collapsible-body">
-                  <p>Guest Name: <%= reservation.user.fullname %></p>
                   <p>Guest Email: <%= reservation.user.email %></p>
                   <p>Phone No: <%= reservation.user.phone_number %></p>
                   <p>Arrival Date: <%= reservation.arrival.strftime("%d/%m/%Y") %></p>
