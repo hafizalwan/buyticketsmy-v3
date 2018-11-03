@@ -1,5 +1,12 @@
-<p>Welcome <%= @email %>!</p>
+<p>Hi, <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<h3>Thank you for registering with Buytickets.my!</h3>
+
+<p>My name is Khairul Hafiz, I just want to say welcome to buytickets and thank you for choosing to book with us.</p>
+
+<p>Before you can start booking your activities, you need to activate your email first.
+I'll only send payment instructions and your booking confirmation! There will be no spam I promise :)</p>
+
+<p>Please click on the link below to confirm your email. Thanks again!</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
