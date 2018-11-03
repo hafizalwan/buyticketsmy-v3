@@ -92,5 +92,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'http://buyticketsmy.ap-southeast-1.elasticbeanstalk.com/index.html', port:3306 }
 end
