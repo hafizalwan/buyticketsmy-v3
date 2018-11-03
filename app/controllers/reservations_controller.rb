@@ -33,9 +33,13 @@ class ReservationsController < ApplicationController
   end
 
   def approve
+    @reservation.Approved!
+    redirect_to your_reservations_path
   end
 
   def decline
+    @reservation.Declined!
+    redirect_to your_reservations_path
   end
 
   private
