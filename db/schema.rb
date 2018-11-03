@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_03_023623) do
+ActiveRecord::Schema.define(version: 2018_11_03_093303) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_11_03_023623) do
     t.float "latitude"
     t.float "longitude"
     t.boolean "active", default: true
+    t.integer "instant", default: 0
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 2018_11_03_023623) do
     t.bigint "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["activity_id"], name: "index_reservations_on_activity_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
