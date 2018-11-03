@@ -19,6 +19,12 @@
         </div><!-- input-field -->
 
         <div class="input-field">
+          <%= f.label :phone_number %><br />
+          <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone-number", id: "phone-number", type: "number" %>
+          <span class="helper-text">Optional: Please enter your phone number.</span>
+        </div><!-- input-field -->
+
+        <div class="input-field">
           <%= f.label :password %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
