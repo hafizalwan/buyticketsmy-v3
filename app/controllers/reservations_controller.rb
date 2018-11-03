@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_reservation, [:approve, :decline]
 
   def create
     activity = Activity.find(params[:activity_id])
@@ -31,7 +32,17 @@ class ReservationsController < ApplicationController
     @activities = current_user.activities
   end
 
+  def approve
+  end
+
+  def decline
+  end
+
   private
+
+    def set_reservation
+      @reservation = Reservation.find(params[:id])
+    end
 
     def reservation_params
       params.require(:reservation).permit(:arrival, :my_adult_count, :my_child_count, :int_adult_count, :int_child_count)
