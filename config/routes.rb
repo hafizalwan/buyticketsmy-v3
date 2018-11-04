@@ -22,4 +22,5 @@ Rails.application.routes.draw do
       post '/decline' => 'reservations#decline'
     end
   end
+
 end
