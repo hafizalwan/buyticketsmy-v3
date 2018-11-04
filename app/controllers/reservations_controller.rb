@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!  
   before_action :set_reservation, only: [:approve, :decline]
 
   def create
@@ -43,6 +43,13 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+    def require_admin
+      if current_user != current_user.is_admin? || current_user.is_host?
+        flash[:alert] = "You must become an admin or host to access this page!"
+        redirect_to root_path
+      end
+    end
 
     def set_reservation
       @reservation = Reservation.find(params[:id])

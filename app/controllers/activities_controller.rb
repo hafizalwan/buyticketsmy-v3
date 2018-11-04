@@ -49,6 +49,14 @@ class ActivitiesController < ApplicationController
   end
 
   private
+
+    def require_admin
+      if current_user != current_user.is_admin? || current_user.is_host?
+        flash[:alert] = "Only an admin or host can perform this action!"
+        redirect_to root_path
+      end
+    end
+
     def set_activity
       @activity = Activity.find(params[:id])
     end
