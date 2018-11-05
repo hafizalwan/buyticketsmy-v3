@@ -1,34 +1,38 @@
-<!-- Best Price Section -->
-<div class="row">
-	<div class="container deal-intro">
-		<h2 class="black-text best-price-title">Our Best Price!</h2>
-		<p class="black-text best-price-p">We have the best prices available online! Bring your family and friends together to
-		<a href="#" class="red-text darken-4">#Langkawi</a> no matter how much your budget is!</p>
-	</div><!-- container -->
-</div><!-- row -->
+<%= render 'shared/slider' %>
 
-<!-- Activities and Packages Cards -->
-<div class="row">
-  <% @activities.each do |activity| %>
-    <div class="col s12 m3">
-        <div class="card sticky-action">
-            <div class="card-image waves-effect waves-block waves-light">
-                <%= image_tag activity.images[0] %>
-            </div><!-- card-image -->
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4"><%= activity.name %><i class="material-icons right">more_vert</i></span>
-                <p>MYR<%= activity.my_adult_price %>! <span class="grey-text text-lighten-1"><del>MYR<%= activity.full_price %></del></span></p>
-            </div><!-- card-content -->
-            <div class="card-action">
-								<%= link_to 'BOOK NOW!', activity, class: "btn-small red" %>
-            </div><!-- card-action -->
-            <div class="card-reveal">
-                <span class="card-title activator grey-text text-darken-4"><%= activity.name %><i class="material-icons right">close</i></span>
-                <p>
-                  <%= activity.description %>
-                </p>
-            </div><!-- card-reveal -->
-        </div><!-- card -->
-    </div><!-- col -->
-  <% end %>
-</div><!-- row -->
+<!-- Best Price Section -->
+<div class="container">
+	<div class="row">
+		<div class="container deal-intro">
+			<h2 class="black-text best-price-title">Our Best Price!</h2>
+			<p class="black-text best-price-p">We have the best prices available online! Bring your family and friends together to
+			<a href="#" class="red-text darken-4">#Langkawi</a> no matter how much your budget is!</p>
+		</div><!-- container -->
+	</div><!-- row -->
+
+	<!-- Activities and Packages Cards -->
+	<div class="row">
+	  <% @activities.each do |activity| %>
+	    <div class="col s12 m3">
+	        <div class="card sticky-action">
+	            <div class="card-image waves-effect waves-block waves-light">
+	                <%= image_tag activity.images[0] %>
+	            </div><!-- card-image -->
+	            <div class="card-content">
+	                <span class="card-title activator grey-text text-darken-4"><%= activity.name %><i class="material-icons right">more_vert</i></span>
+	                <p>MYR<%= activity.my_adult_price %>! <span class="grey-text text-lighten-1"><del>MYR<%= activity.full_price %></del></span></p>
+	            </div><!-- card-content -->
+	            <div class="card-action">
+									<%= link_to 'BOOK NOW!', activity, class: "btn-small red" %>
+	            </div><!-- card-action -->
+	            <div class="card-reveal">
+	                <span class="card-title activator grey-text text-darken-4"><%= activity.name %><i class="material-icons right">close</i></span>
+	                <p>
+	                  <%= activity.description %>
+	                </p>
+	            </div><!-- card-reveal -->
+	        </div><!-- card -->
+	    </div><!-- col -->
+	  <% end %>
+	</div><!-- row -->
+</div><!-- container -->
