@@ -1,35 +1,37 @@
-<div class="row">
-  <div class="col s10 offset-s1">
-    <div class="card-panel">
-      <h2 class="center">Log in</h2>
+<div class="container">
+  <div class="row">
+    <div class="col s10 offset-s1">
+      <div class="card-panel">
+        <h2 class="center">Log in</h2>
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="input-field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "email", type: "email", class: "validate" %>
-        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="input-field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "email", type: "email", class: "validate" %>
+          </div>
 
-        <div class="input-field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password", id: "password", type: "password", class: "validate" %>
-        </div>
+          <div class="input-field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password", id: "password", type: "password", class: "validate" %>
+          </div>
 
-        <br/>
+          <br/>
 
-        <div class="actions">
-          <%= f.submit "Log in", class: "waves-effect waves-light btn" %>
-          <span class="right">
-            <%= link_to 'Forgot Password', new_user_password_path %>
-          </span>
-        </div>
+          <div class="actions">
+            <%= f.submit "Log in", class: "waves-effect waves-light btn" %>
+            <span class="right">
+              <%= link_to 'Forgot Password', new_user_password_path %>
+            </span>
+          </div>
 
-        <br/>
+          <br/>
 
-        <div class="card-action">
-          <%= link_to 'Sign Up', new_user_registration_path %>
-        </div>
-      <% end %>
+          <div class="card-action">
+            <%= link_to 'Sign Up', new_user_registration_path %>
+          </div>
+        <% end %>
 
-    </div><!-- card-panel -->
-  </div><!-- col -->
-</div><!-- row -->
+      </div><!-- card-panel -->
+    </div><!-- col -->
+  </div><!-- row -->
+</div><!-- container -->

@@ -1,36 +1,37 @@
 <!-- Create Package Section -->
-<div class="row">
-  <div class="col s12">
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel">
 
-    <div class="card-panel">
+        <%= render 'create_activity_menu' %>
 
-      <%= render 'create_activity_menu' %>
+        <div class="card-content">
+          <div class="container">
+          <!-- PHOTOS UPLOAD SECTION IS NOT YET COMPLETE -->
+            <div id="photos">
+              <%= form_for @activity do |f| %>
+                <h5 class="center">Upload photos for slider and banner</h5>
+                <br/>
+                <p>First photo will be used as banner image, upload multiple to make a photo slider. Make sure to rename those photos to '1.jpg', '2.jpg' etc..</p>
+                <div class="input-field">
+                  <%= f.file_field :images, multiple: true, type: "file" %>
+                </div><!-- file input-field --></br>
 
-      <div class="card-content">
-        <div class="container">
-        <!-- PHOTOS UPLOAD SECTION IS NOT YET COMPLETE -->
-          <div id="photos">
-            <%= form_for @activity do |f| %>
-              <h5 class="center">Upload photos for slider and banner</h5>
-              <br/>
-              <p>First photo will be used as banner image, upload multiple to make a photo slider. Make sure to rename those photos to '1.jpg', '2.jpg' etc..</p>
-              <div class="input-field">
-                <%= f.file_field :images, multiple: true, type: "file" %>
-              </div><!-- file input-field --></br>
+                <div class="row">
+                  <div class="col s12">
+                    <%= button_tag type: "submit", class: "btn waves-effect waves-light", name: "action" do %>
+                      Update<span><i class="material-icons right">update</i></span>
+                    <% end %>
+                  </div><!-- col -->
+                </div><!-- row -->
 
-              <div class="row">
-                <div class="col s12">
-                  <%= button_tag type: "submit", class: "btn waves-effect waves-light", name: "action" do %>
-                    Update<span><i class="material-icons right">update</i></span>
-                  <% end %>
-                </div><!-- col -->
-              </div><!-- row -->
+              <% end %>
+            </div><!-- photos -->
 
-            <% end %>
-          </div><!-- photos -->
-
-        </div><!-- container -->
-      </div><!-- card-content -->
-    </div><!-- card-panel -->
-  </div><!-- col -->
-</div><!-- row -->
+          </div><!-- container -->
+        </div><!-- card-content -->
+      </div><!-- card-panel -->
+    </div><!-- col -->
+  </div><!-- row -->
+</div><!-- container -->

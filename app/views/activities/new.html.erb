@@ -1,21 +1,23 @@
 <!-- START CREATE ACTIVITY PAGE -->
-<div class="row">
-  <div class="col s12">
-    <div class="card-panel">
-      <div class="card-content">
-        <h5 class="center">Create your new activity</h5>
-      </div><!-- card-content -->
-      <div class="card-content">
-        <div class="row">
-          <%= form_for @activity, class: "col s12" do |f| %>
-            <div class="input-field col s12">
-              <%= f.text_field :name, id: "activity-name", type: "text" %>
-              <label for="activity-name">Activity Name</label>
-            </div><!-- input-field -->
-            <div><%= f.submit "Create", class: "btn waves-effect waves-light" %></div>
-          <% end %>
-        </div><!-- row -->
-      </div><!-- card-content -->
-    </div><!-- card-panel -->
-  </div><!-- col -->
-</div><!-- row -->
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel">
+        <div class="card-content">
+          <h5 class="center">Create your new activity</h5>
+        </div><!-- card-content -->
+        <div class="card-content">
+          <div class="row">
+            <%= form_for @activity, class: "col s12" do |f| %>
+              <div class="input-field col s12">
+                <%= f.text_field :name, id: "activity-name", type: "text" %>
+                <label for="activity-name">Activity Name</label>
+              </div><!-- input-field -->
+              <div><%= f.submit "Create", class: "btn waves-effect waves-light" %></div>
+            <% end %>
+          </div><!-- row -->
+        </div><!-- card-content -->
+      </div><!-- card-panel -->
+    </div><!-- col -->
+  </div><!-- row -->
+</div>
