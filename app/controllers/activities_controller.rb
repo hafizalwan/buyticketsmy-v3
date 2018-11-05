@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
+  before_action :require_admin, except: [:show]
 
   def index
     @activities = current_user.activities
@@ -51,8 +52,8 @@ class ActivitiesController < ApplicationController
   private
 
     def require_admin
-      if current_user != current_user.is_admin? || current_user.is_host?
-        flash[:alert] = "Only an admin or host can perform this action!"
+      if !current_user.is_admin?
+        flash[:alert] = "Only an admin can perform this action!"
         redirect_to root_path
       end
     end
