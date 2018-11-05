@@ -13,7 +13,7 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-  config.force_ssl = true
+  # config.force_ssl = true
   config.log_level = :debug
   config.log_tags = [ :request_id ]
   # Use a different cache store in production.
