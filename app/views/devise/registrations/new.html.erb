@@ -34,9 +34,12 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "password", type: "password", class: "validate" %>
           </div><!-- input-field --><br/>
 
-          <div class="actions">
+          <div class="actions center">
             <%= button_tag type: "submit", class: "btn waves-effect waves-light", name: "action" do %>
               Submit<span><i class="material-icons right">send</i></span>
+            <% end %> OR
+            <%= link_to user_facebook_omniauth_authorize_path, class: "btn blue accent-4" do %>
+              <i class="fab fa-facebook-square"></i> Facebook
             <% end %>
           </div><!-- actions -->
 
