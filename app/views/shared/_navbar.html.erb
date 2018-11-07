@@ -1,11 +1,14 @@
 <!-- Dropdown Desktop -->
 <ul id="dropdown-lg" class="dropdown-content">
   <li><%= link_to 'Your Activities', your_activities_path %></li>
+  <li><p>Edit Profile</p></li>
   <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
 </ul>
 <!-- Sidenav Menu -->
 <ul id="mobile-menu" class="sidenav">
+  <li class="center"><h6><%= current_user.fullname %></h6></li><hr/>
   <li><%= link_to 'Your Activities', your_activities_path %></li>
+  <li><p>Edit Profile</p></li>
   <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
 </ul>
 <div class="navbar-fixed">
@@ -14,7 +17,7 @@
             <div class="nav-wrapper">
                 <%= link_to image_tag('weblogo/main-logo-web.png', class: 'img-logo'), root_path, class: 'brand-logo' %>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="popular.html">Popular Activities</a></li>
+                    <li><%= link_to 'Rental Cars', rental_cars_path %></li>
                     <li><a href="packages.html">Packages</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <% if (!user_signed_in?) %>
@@ -25,11 +28,6 @@
                           <%= current_user.fullname %><i class="material-icons right">arrow_drop_down</i></a>
                       </li>
                     <% end %>
-
-                    <!-- Please add a clickable icons -->
-
-                    <!-- <li><a href="https://www.facebook.com/buyticketsmy"><i class="fab fa-facebook"></i></a></li> -->
-                    <!-- <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li> -->
                 </ul>
             </div><!-- nav-wrapper -->
         </div><!-- container -->
@@ -41,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col s3">
-                <a href="popular.html" class="waves-effect waves-light btn-flat">Popular Activities</a>
+                <%= link_to 'Rental Cars', rental_cars_path, class: "waves-effect waves-light btn-flat" %>
             </div>
             <div class="col s3">
                 <a href="packages.html" class="waves-effect waves-light btn-flat">Packages</a>
@@ -53,10 +51,7 @@
               <% if (!user_signed_in?) %>
                 <%= link_to 'LOGIN', new_user_session_path, class: 'waves-effect waves-light btn-small red white-text' %>
               <% else %>
-              <a href="#" data-target="mobile-menu" class="sidenav-trigger btn-small btn-flat"><i class="material-icons center">menu</i></a>
-
-              <!-- Try make a button with arrow down icon -->
-                <!-- <a class="sidenav-trigger" href="#!" data-target="mobile-menu"><i class="material-icons right">menu</i></a> -->
+                <a href="#" data-target="mobile-menu" class="sidenav-trigger btn-small btn-flat"><i class="material-icons center">menu</i></a>
               <% end %>
             </div>
         </div><!-- row -->
