@@ -1,6 +1,5 @@
 Rails.application.configure do
 
-  config.require_master_key = true
   config.cache_classes = false
   config.eager_load = false
   config.consider_all_requests_local = true
@@ -36,8 +35,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   ActionMailer::Base.smtp_settings = {
-  :user_name => 'devbto',
-  :password => 'yj9KickvzpbW79T',
+  :user_name => '',
+  :password => '',
   :domain => 'buytickets.my',
   :address => 'smtp.sendgrid.net',
   :port => 587,
