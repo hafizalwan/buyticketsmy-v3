@@ -16,6 +16,8 @@
 //= require rails-ujs
 //= require jquery-ui/datepicker
 //= require toastr
+//= require Chart.bundle
+//= require chartkick
 //= require activestorage
 //= require turbolinks
 //= require_tree .
