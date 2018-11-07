@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :revenues, only: [:index]
+
   get '/dashboard' => 'dashboards#index'
   get '/rental_cars' => 'carentals#index'
 
