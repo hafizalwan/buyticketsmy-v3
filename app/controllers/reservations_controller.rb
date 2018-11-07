@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
     activity = Activity.find(params[:activity_id])
 
     if current_user == activity.user
-      flash[:alert] = "An admin or host cannot make a reservation!"
+      flash[:alert] = "An admin cannot make a reservation!"
     else
       @reservation = current_user.reservations.build(reservation_params)
       @reservation.activity = activity
