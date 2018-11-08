@@ -1,0 +1,12 @@
+<div class="container">
+  <h5 class="center">Revenue Chart</h5>
+  <div class="card">
+    <div class="card-content">
+      <% if @reservations.blank? %>
+        <h3 class="center">You don't have any reservations</h3>
+      <% else %>
+        <%= line_chart @this_week_revenue, colors: ["#d50000"] %>
+      <% end %>
+    </div><!-- card-content -->
+  </div><!-- card -->
+</div><!-- container -->
