@@ -6,7 +6,6 @@
 </ul>
 <!-- Sidenav Menu -->
 <ul id="mobile-menu" class="sidenav">
-  <li class="center"><h6><%= current_user.fullname %></h6></li><hr/>
   <li><%= link_to 'Your Activities', your_activities_path %></li>
   <li><p>Edit Profile</p></li>
   <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
