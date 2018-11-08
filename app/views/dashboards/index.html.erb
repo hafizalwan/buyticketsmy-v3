@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content">
+          <div class="row">
+            <div class="col s12 m4">
+              <div class="card">
+                <div class="card-content center">
+                  <h5>Create Activity</h5><br/>
+                  <%= link_to 'CREATE', new_activity_path, class: "btn-large green" %>
+                </div><!-- card-content -->
+              </div><!-- card -->
+            </div><!-- col -->
+            <div class="col s12 m4">
+              <div class="card">
+                <div class="card-content center">
+                  <h5>Reservations</h5><br/>
+                  <%= link_to 'MANAGE', your_reservations_path, class: "btn-large green" %>
+                </div><!-- card-content -->
+              </div><!-- card -->
+            </div><!-- col -->
+            <div class="col s12 m4">
+              <div class="card">
+                <div class="card-content center">
+                  <h5>Rental Cars</h5><br/>
+                  <%= link_to 'CREATE', new_activity_path, class: "btn-large", disabled: true %>
+                </div><!-- card-content -->
+              </div><!-- card -->
+            </div><!-- col -->
+          </div><!-- row --><hr/>
+
+          
+        </div><!-- card-content -->
+      </div><!-- card -->
+    </div><!-- col -->
+  </div><!-- row -->
+</div><!-- container -->
