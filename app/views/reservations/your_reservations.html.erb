@@ -22,7 +22,7 @@
               <% activity.reservations.each do |reservation| %>
                 <li>
                   <div class="collapsible-header">
-                    Name: <%= reservation.user.fullname %> | Created at: <%= reservation.created_at.strftime("%d/%m/%Y") %> | Status: <% if reservation.Waiting? %>
+                    ID: <%= reservation.id %> | Name: <%= reservation.user.fullname %> | Created at: <%= reservation.created_at.strftime("%d/%m/%Y") %> | <% if reservation.Waiting? %>
                                                                                                                                           <span class="new badge red" data-badge-caption=""><%= reservation.status %></span>
                                                                                                                                         <% elsif reservation.Approved? %>
                                                                                                                                           <span class="new badge green" data-badge-caption=""><%= reservation.status %></span>
