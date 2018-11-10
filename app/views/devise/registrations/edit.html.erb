@@ -1,9 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col s10 offset-s1">
+      <h2 class="center">Edit Profile</h2>
       <div class="card-panel">
-
-        <h2 class="center">Edit Profile</h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render 'shared/devisemes' %>
@@ -24,6 +23,12 @@
           </div><!-- input-field -->
 
           <div class="input-field">
+            <%= f.label :phone_number %><br />
+            <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", id: "phone_number", type: "number" %>
+            <span class="helper-text">Phone number are required to contact guest for any changes or emergency. Please include country code (eg: 60123456789)</span>
+          </div><!-- input-field -->
+
+          <div class="input-field">
             <%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: "new-password", id: "password", type: "password", class: "validate" %>
             <span class="helper-text">Don't want to change it? Leave it..</span>
@@ -36,11 +41,6 @@
           <div class="input-field">
             <%= f.label :password_confirmation %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "password", type: "password", class: "validate" %>
-          </div><!-- input-field -->
-
-          <div class="input-field">
-            <%= f.label :current_password %><br />
-            <%= f.password_field :current_password, autocomplete: "new-password", id: "password", type: "password", class: "validate" %>
           </div><!-- input-field -->
 
           <br/>
