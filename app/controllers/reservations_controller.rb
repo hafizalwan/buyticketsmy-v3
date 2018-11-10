@@ -30,7 +30,7 @@ class ReservationsController < ApplicationController
   end
 
   def your_reservations
-    @activities = current_user.activities
+    @activities = current_user.activities.order(Created: :asc)
   end
 
   def approve
