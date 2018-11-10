@@ -30,7 +30,7 @@ class ReservationsController < ApplicationController
   end
 
   def your_reservations
-    @activities = current_user.activities.order(Created: :asc)
+    @activities = current_user.activities.order(created_at: :asc)
   end
 
   def approve
@@ -44,6 +44,12 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+    def reservation_mailer(reservation, activity)
+      if @reservation.Approved!
+        ReservationMailer.send_email_to_guest(reservation.user, activity)
+      end
+    end
 
     def require_admin
       if !current_user.is_admin?
