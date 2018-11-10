@@ -35,10 +35,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   ActionMailer::Base.smtp_settings = {
-  :user_name => '',
-  :password => '',
-  :domain => 'buytickets.my',
-  :address => 'smtp.sendgrid.net',
+  :user_name => "<%= Rails.application.credentials.dig(:sendgrid, :sendgrid_username) %>",
+  :password => "<%= Rails.application.credentials.dig(:sendgrid, :sendgrid_password) %>",
+  :domain => "buytickets.my",
+  :address => "smtp.sendgrid.net",
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
