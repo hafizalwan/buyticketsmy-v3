@@ -20,6 +20,7 @@ class ReservationsController < ApplicationController
         flash[:alert] = "Something is wrong, please try again!"
       end
     end
+
   end
 
   def success
@@ -35,6 +36,8 @@ class ReservationsController < ApplicationController
 
   def approve
     @reservation.Approved!
+    reservation_mailer(@reservation.activity, @reservation)
+    
     redirect_to your_reservations_path
   end
 
@@ -45,10 +48,8 @@ class ReservationsController < ApplicationController
 
   private
 
-    def reservation_mailer(reservation, activity)
-      if @reservation.Approved!
-        ReservationMailer.send_email_to_guest(reservation.user, activity)
-      end
+    def reservation_mailer(activity, reservation)
+      ReservationMailer.send_email_to_guest(reservation.user, activity).deliver_now
     end
 
     def require_admin
