@@ -19,6 +19,7 @@ gem 'jquery-ui-rails', '~> 5.0'
 gem 'geocoder', '~> 1.5'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'chartkick', '~> 3.0', '>= 3.0.1'
+gem 'ransack', '~> 2.1'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
