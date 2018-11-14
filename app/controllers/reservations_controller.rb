@@ -37,7 +37,7 @@ class ReservationsController < ApplicationController
   def approve
     @reservation.Approved!
     reservation_mailer(@reservation.activity, @reservation)
-    
+
     redirect_to your_reservations_path
   end
 
