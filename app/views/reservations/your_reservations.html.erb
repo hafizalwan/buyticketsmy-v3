@@ -5,7 +5,7 @@
       <div class="card">
         <div class="card-content">
           <h5 class="center">Reservation List</h5>
-          <p class="center">Use the date selection to filter the results</p>
+          <p class="center">Use the date selection to filter the results</p><br/>
 
         </div><!-- card-content -->
       </div><!-- card -->
@@ -60,7 +60,8 @@
   $(document).ready(function(){
     $('.collapsible').collapsible();
   });
-  $('#search_arrival').datepicker({
+  
+  $('#search_reservations1, #search_reservations2').datepicker({
     dateFormat: 'dd-mm-yy',
     onSelect: function(selected) {
 
