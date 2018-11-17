@@ -7,4 +7,8 @@ class Activity < ApplicationRecord
 
   geocoded_by :location_map
   after_validation :geocode, if: :location_map_changed?
+
+  def thumbnail input
+    return self.images[input].variant(resize: '300x300').processed
+  end
 end
