@@ -25,7 +25,7 @@
               <% activity.reservations.each do |reservation| %>
                 <li>
                   <div class="collapsible-header">
-                    ID: <%= reservation.id %> | Name: <%= reservation.user.fullname %> | Created at: <%= reservation.created_at.strftime("%d/%m/%Y") %> | <% if reservation.Waiting? %>
+                    ID: 00<%= reservation.id %> | Name: <%= reservation.user.fullname %> | Created at: <%= reservation.created_at.strftime("%d/%m/%Y") %> | <% if reservation.Waiting? %>
                                                                                                                                           <span class="new badge red" data-badge-caption=""><%= reservation.status %></span>
                                                                                                                                         <% elsif reservation.Approved? %>
                                                                                                                                           <span class="new badge green" data-badge-caption=""><%= reservation.status %></span>
@@ -62,14 +62,5 @@
 <script>
   $(document).ready(function(){
     $('.collapsible').collapsible();
-  });
-  
-  $('#search_reservations1, #search_reservations2').datepicker({
-    dateFormat: 'dd-mm-yy',
-    onSelect: function(selected) {
-
-      $('#btn-search').attr('disabled', false);
-
-    }
   });
 </script>
