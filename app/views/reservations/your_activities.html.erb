@@ -1,48 +1,52 @@
-
-<!-- SEARCH FILTER -->
+<!-- RESERVATION LIST -->
 <div class="container">
   <div class="row">
     <div class="col s12">
       <div class="card">
         <div class="card-content">
-          <h5 class="center">Your Activities</h5>
-          <p class="center">Use the date selection to filter the results</p>
-
-        </div><!-- card-content -->
-      </div><!-- card -->
-    </div><!-- col -->
-  </div><!-- row -->
-
-  <!-- RESERVATION LIST -->
-  <div class="row">
-    <div class="col s12">
-      <div class="card">
-        <div class="card-content">
-          <ul class="collapsible popout">
-            <% @bookings.each do |booking| %>
-                <li>
-                  <div class="collapsible-header">
-                    BOOKING ID: <%= booking.id %> | Activity Name: <%= booking.activity.name %> <% if booking.Waiting? %>
-                                                                                            <span class="new badge red" data-badge-caption=""><%= booking.status %></span>
-                                                                                          <% elsif booking.Approved? %>
-                                                                                            <span class="new badge green" data-badge-caption=""><%= booking.status %></span>
-                                                                                          <% else %>
-                                                                                            <span class="new badge grey" data-badge-caption=""><%= booking.status %></span>
-                                                                                          <% end %>
-                  </div><!-- collapsible-header -->
-                  <div class="collapsible-body">
-                    <h5>Guest Email: <%= booking.user.email %> </h5>
-                    <p>Phone No: <%= booking.user.phone_number %></p>
-                    <p>Arrival Date: <%= booking.arrival.strftime("%d/%m/%Y") %></p>
-                    <p>Adult: <%= booking.my_adult_count %></p>
-                    <p>Child: <%= booking.my_child_count %></p><hr/><br/>
-                    <p>Total: MYR <%= booking.total %></p><br/>
-                    <i class="material-icons">error</i><span><p> Once the payment has been made, your booking are confirmed.
-                    Please take note of the refund and cancellation policies of this reservation.</p></span>
-                  </div><!-- collapsible-body -->
-                </li>
-            <% end %>
-          </ul>
+          <div class="row">
+            <div class="col s12">
+              <h5 class="center">Your Activities</h5>
+              <p class="center">Please show the approved reservation details upon arrival.</p>
+              <br/><hr/><br/>
+            </div><!-- col -->
+          </div><!-- row -->
+            <ul class="collapsible popout">
+              <% @bookings.each do |booking| %>
+                  <li>
+                    <div class="collapsible-header">
+                      BOOKING ID: 00<%= booking.id %> | Activity Name: <%= booking.activity.name %> <% if booking.Waiting? %>
+                                                                                              <span class="new badge red" data-badge-caption=""><%= booking.status %></span>
+                                                                                            <% elsif booking.Approved? %>
+                                                                                              <span class="new badge green" data-badge-caption=""><%= booking.status %></span>
+                                                                                            <% else %>
+                                                                                              <span class="new badge grey" data-badge-caption=""><%= booking.status %></span>
+                                                                                            <% end %>
+                    </div><!-- collapsible-header -->
+                    <div class="collapsible-body">
+                      <h5>Guest Name: <%= booking.user.fullname %> </h5>
+                      <p>Guest Email: <%= booking.user.email %></p>
+                      <p>Phone No: <%= booking.user.phone_number %></p>
+                      <p>Arrival Date: <%= booking.arrival.strftime("%d/%m/%Y") %></p>
+                      <p>Adult: <%= booking.my_adult_count %></p>
+                      <p>Child: <%= booking.my_child_count %></p><hr/><br/>
+                      <% if booking.Approved? %>
+                        <p>Total: MYR <%= booking.total %> <span><strong>(PAID)</strong></span><p>
+                      <% elsif booking.Waiting? %>
+                        <p>Total: MYR <%= booking.total %> <span><strong>(PAYMENT DUE)</strong></span><p>
+                      <% else %>
+                        <strong class="red-text">This reservation has been cancelled</strong><br/>
+                      <% end %>
+                      <% if booking.Waiting? || booking.Approved? %>
+                        <i class="material-icons">error</i>
+                        <span>
+                          <p>Once the payment has been made, your booking are confirmed. Please take note of the refund and cancellation policies for this activity.</p>
+                        </span>
+                      <% end %>
+                    </div><!-- collapsible-body -->
+                  </li>
+              <% end %>
+            </ul>
         </div><!-- card-content -->
       </div><!-- card -->
     </div><!-- col -->
@@ -52,13 +56,5 @@
 <script>
   $(document).ready(function(){
     $('.collapsible').collapsible();
-  });
-  $('#search_arrival').datepicker({
-    dateFormat: 'dd-mm-yy',
-    onSelect: function(selected) {
-
-      $('#btn-search').attr('disabled', false);
-
-    }
   });
 </script>
