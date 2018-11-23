@@ -28,5 +28,6 @@ Rails.application.routes.draw do
 
   get '/dashboard' => 'dashboards#index'
   get '/rental_cars' => 'carentals#index'
+  get '/packages' => 'packages#index'
 
 end
