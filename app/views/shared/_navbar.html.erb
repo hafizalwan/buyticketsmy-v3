@@ -17,7 +17,7 @@
                 <%= link_to image_tag('weblogo/main-logo-web.png', class: 'img-logo'), root_path, class: 'brand-logo' %>
                 <ul class="right hide-on-med-and-down">
                     <li><%= link_to 'Rental Cars', rental_cars_path %></li>
-                    <li><a href="packages.html">Packages</a></li>
+                    <li><%= link_to 'Packages', packages_path %></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <% if (!user_signed_in?) %>
                       <li><%= link_to 'LOGIN', new_user_session_path, class: 'waves-effect waves-light btn-small red white-text' %></li>
@@ -41,7 +41,7 @@
                 <%= link_to 'Car Rental', rental_cars_path, class: "waves-effect waves-light btn-flat" %>
             </div>
             <div class="col s3">
-                <a href="packages.html" class="waves-effect waves-light btn-flat">Packages</a>
+              <%= link_to 'Packages', packages_path, class: "waves-effect waves-light btn-flat" %>
             </div>
             <div class="col s3">
                 <a href="#" class="waves-effect waves-light btn-flat">Contact Us</a>
