@@ -31,6 +31,3 @@
 
 # Ignore sendgrid cred
 sendgrid.env
-
-#secret key base
-.env
