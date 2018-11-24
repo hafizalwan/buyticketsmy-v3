@@ -20,7 +20,7 @@ set :deploy_to, "/home/btodev/BTOWebApp/buyticketsmy-v3"
 # Default value for :pty is false
 # set :pty, true
 
-append :linked_files, "config/database.yml", "config/master.key"
+append :linked_files, "config/database.yml", "config/master.key", "credentials.yml.enc"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 # Default value for default_env is {}
