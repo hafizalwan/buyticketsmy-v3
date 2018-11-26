@@ -9,7 +9,7 @@ install_plugin Capistrano::SCM::Git
 
 require "capistrano/rvm"
 set :rvm_type, :user
-set :rvm_ruby_version, '2.5.1'
+set :rvm_ruby_version, '2.5.1p57'
 
 require 'capistrano/rails'
 require "capistrano/passenger"
