@@ -21,6 +21,7 @@ gem 'chartkick', '~> 3.0', '>= 3.0.1'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
