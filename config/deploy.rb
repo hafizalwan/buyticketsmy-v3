@@ -10,7 +10,7 @@ set :repo_url, "git@github.com:hafizalwan/buyticketsmy-v3.git"
 set :passenger_restart_with_touch, true
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/BTOWebApp/btodev/buyticketsmy-v3"
+set :deploy_to, "/home/btodev/BTOWebApp/buyticketsmy-v3"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
