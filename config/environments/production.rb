@@ -46,7 +46,7 @@ Rails.application.configure do
   :password => "<%= Rails.application.credentials.dig(:sendgrid, :sendgrid_password) %>",
   :domain => "buytickets.my",
   :address => "smtp.sendgrid.net",
-  :port => 587,
+  :port => 465,
   :authentication => :plain,
   :enable_starttls_auto => true
 }
