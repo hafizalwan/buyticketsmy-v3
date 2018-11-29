@@ -1,2 +1,1 @@
-set :stage, :production
-server '178.128.105.43', user: 'btodev', roles: %w{app db web}
+server '128.199.238.160', user: 'btodev', roles: %w{app db web}
